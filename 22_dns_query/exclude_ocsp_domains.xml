@@ -1,7 +1,4 @@
-<Sysmon schemaversion="4.22">
-   <!-- Capture all hashes -->
-   <HashAlgorithms>*</HashAlgorithms>
-   <CheckRevocation/>
+<Sysmon schemaversion="4.30">
    <EventFiltering>
       <RuleGroup name="" groupRelation="or">
       <DnsQuery onmatch="exclude">
@@ -10,10 +7,12 @@
 		<QueryName condition="end with">.globalsign.net</QueryName>
 		<QueryName condition="is">msocsp.com</QueryName> <!--Microsoft:OCSP-->
 		<QueryName condition="is">ocsp.msocsp.com</QueryName> <!--Microsoft:OCSP-->
-		<QueryName condition="end with">pki.goog</QueryName>
-		<QueryName condition="is">ocsp.godaddy.com</QueryName>
-		<QueryName condition="end with">amazontrust.com</QueryName>
-		<QueryName condition="is">ocsp.sectigo.com</QueryName>
+        	<QueryName condition="is">pki.goog</QueryName>
+        	<QueryName condition="end with">.pki.goog</QueryName>
+	      	<QueryName condition="is">ocsp.godaddy.com</QueryName>
+        	<QueryName condition="is">amazontrust.com</QueryName>
+        	<QueryName condition="end with">.amazontrust.com</QueryName>
+	      	<QueryName condition="is">ocsp.sectigo.com</QueryName>
 		<QueryName condition="is">pki-goog.l.google.com</QueryName>
 		<QueryName condition="end with">.usertrust.com</QueryName>
 		<QueryName condition="is">ocsp.comodoca.com</QueryName>
